@@ -1,0 +1,31 @@
+# Escape key is C-t. literal is also C-t.
+# If you would like to enter C-t, enter C-t twice.
+escape ^t^t
+
+# Set character code to UTF-8.
+defutf8 on
+defencoding utf-8
+encoding utf-8 utf-8
+
+# Do not display messages on start up.
+startup_message off
+
+# Detach automatically when the terminal is down.
+autodetach on
+
+# Set visual bell to off.
+vbell off
+
+# Set scrollback buffer size.
+defscrollback 1024
+
+# Display window list to enter command key and then 'w'.
+bind w windowlist -b
+
+#
+# [%02c]	Current time(hh:mm)
+# %n		Number of window
+# %t		Title of window
+# %-w		Windows number and title before displaying now
+# %+w		Windows number and title after displaying now
+hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
