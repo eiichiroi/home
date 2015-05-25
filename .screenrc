@@ -22,6 +22,9 @@ defscrollback 1024
 # Display window list to enter command key and then 'w'.
 bind w windowlist -b
 
+# Disable the shortcut key of xoff(automatic flow control off)
+bind s
+
 #
 # [%02c]	Current time(hh:mm)
 # %n		Number of window
