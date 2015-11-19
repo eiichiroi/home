@@ -4,6 +4,7 @@ compinit
 
 # enviroment variable
 export LANG=ja_JP.UTF-8
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # history
 HISTFILE=~/.zsh_history
