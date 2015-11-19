@@ -23,19 +23,27 @@ setopt nolistbeep
 unsetopt promptcr
 
 # alias
-[ -f ~/.alias ] && source ~/.alias
+if [ -f ~/.alias ]; then
+    source ~/.alias
+fi
 
 # googletest
 export GTEST_COLOR=1
 
 # for rbenv
-export PATH=~$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
+if [ -f $HOME/.rbenv ]; then
+   export PATH=~$HOME/.rbenv/bin:$PATH
+   eval "$(rbenv init -)"
+fi
 
 # for pyenv
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init -)"
+if [ -f $HOME/.pyenv ]; then
+    export PYENV_ROOT=$HOME/.pyenv
+    export PATH=$PYENV_ROOT/bin:$PATH
+    eval "$(pyenv init -)"
+fi
 
 # for virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
+if [ -f $HOME/.virtualenvs ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+fi
