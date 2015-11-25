@@ -31,19 +31,19 @@ fi
 export GTEST_COLOR=1
 
 # for rbenv
-if [ -f $HOME/.rbenv ]; then
+if [ -e $HOME/.rbenv ]; then
    export PATH=~$HOME/.rbenv/bin:$PATH
    eval "$(rbenv init -)"
 fi
 
 # for pyenv
-if [ -f $HOME/.pyenv ]; then
+if [ -e $HOME/.pyenv ]; then
     export PYENV_ROOT=$HOME/.pyenv
     export PATH=$PYENV_ROOT/bin:$PATH
     eval "$(pyenv init -)"
 fi
 
 # for virtualenvwrapper
-if [ -f $HOME/.virtualenvs ]; then
+if [ -e $HOME/.virtualenvs ]; then
     export WORKON_HOME=$HOME/.virtualenvs
 fi
