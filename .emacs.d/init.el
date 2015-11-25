@@ -41,17 +41,9 @@
 ;;;;; Display current region strongly
 (transient-mark-mode t)
 
-;;;;; Settings for C++
-(add-hook 'c++-mode-hook
-	  '(lambda ()
-	     (c-set-style "gnu")
-	     (c-set-offset 'innamespace 0)
-	     (setq indent-tabs-mode nil)
-	     ))
-
 ;;;;; Packages for Emacs
 (el-get-bundle auto-complete)
-
+(el-get-bundle google-c-style)
 
 
 ;;;;; Config for auto-complete.el
@@ -60,3 +52,7 @@
 (ac-config-default)
 (setq ac-use-menu-map t)
 (put 'set-goal-column 'disabled nil)
+
+;;;;; Config for google-c-style
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
