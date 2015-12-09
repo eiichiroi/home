@@ -44,6 +44,7 @@
 ;;;;; Packages for Emacs
 (el-get-bundle auto-complete)
 (el-get-bundle google-c-style)
+(el-get-bundle markdown-mode)
 
 
 ;;;;; Config for auto-complete.el
