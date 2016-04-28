@@ -31,18 +31,11 @@ fi
 export GTEST_COLOR=1
 
 # ssh-agent for screen detach
-agent=$HOME/.ssh/ssh-agent-$USER
-if [ -S $SSH_AUTH_SOCK ]; then
-    case $SSH_AUTH_SOCK
-    in /tmp/*/agent.[0-9]*)
-	   ln -snf $SSH_AUTH_SOCK $agent && export SSH_AUTH_SOCK=$agent
-    esac
-elif [ -S $agent ]; then
-    export SSH_AUTH_SOCK=$agent
-else
-    # remove if this config move to zprofile
-    echo "no ssh-agent"
+CACHED_SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+if [ -S "$SSH_AUTH_SOCK" ] && [ ! -h "$SSH_AUTH_SOCK" ]; then
+    ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
 fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
 # for rbenv
 if [ -e $HOME/.rbenv ]; then
